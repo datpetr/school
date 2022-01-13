@@ -8,31 +8,40 @@ def x_to_n(x, n):
         14: 'E',
         15: 'F',
     }
-    while x:
-        digit = x % n
-        st += str(digit)
-        x //= n
+    if x.isdigit():
+        x = int(x)
+        while x:
+            digit = x % n
+            if digit >= 10:
+                st += dict[digit]
+            else:
+                st += str(digit)
+            x //= n
 
     return st[::-1]
 
 
 def n_to_10(x, n):
     st = str(x)[::-1]
+
     k = []
     res = 0
 
-    for i in range(len(st)):
-        res += int(st[i]) * (n ** i)
+    dict = {
+        'A': 10,
+        'B': 11,
+        'C': 12,
+        'D': 13,
+        'E': 14,
+        'F': 15,
+    }
 
-    for i in range(len(st) - 1, -1, - 1):
-        if i == 0:
-            k.append('{} * {}^{}'.format(st[i], n, i))
-            k.append(' = {}'.format(res))
+    for i in range(len(st)):
+        if st[i] in dict:
+            res += int(dict[st[i]]) * (n ** i)
         else:
-            k.append('{} * {}^{} + '.format(st[i], n, i))
-    for i in k:
-        print(i, end='')
-    print()
+            res += int(st[i]) * (n ** i)
+
     return res
 
 
@@ -43,7 +52,7 @@ def x_to_any(x, n1, n2):
         return x_to_n(n_to_10(x, n1), n2)
 
 
-x = int(input('please, enter the number you want to translate: '))
+x = input('please, enter the number you want to translate: ')
 n1 = int(input('please, the numeral system of the entered number: '))
 n2 = int(input('please, enter the number system you want to translate: '))
 
