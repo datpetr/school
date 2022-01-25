@@ -4,7 +4,7 @@ def x_to_n(x, n):
         st += str(x % n)
         x //= n
 
-    return st
+    return st[::-1]
 
 
 expression = 343 ** 5 + 7 ** 3 - 1
