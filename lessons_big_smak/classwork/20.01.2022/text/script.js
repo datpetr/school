@@ -1,14 +1,15 @@
-function areaTriangle(){
-    var a = document.forma1.a.value * 1;
-    var b = document.forma1.b.value * 1;
-    var c = document.forma1.c.value * 1;
+function areaRectangle(){
+    var a = Number(document.forma1.t1.value);
+    var b = Number(document.forma1.t2.value);
+    var c = Number(document.forma1.t3.value);
 
-    if (a * 1 + b * 1 <= c * 1) || (a * 1 + c * 1 <= b * 1) || (c * 1 + b * 1 <= a* 1) {
-        document.forma1.res.value = 'такой треугольник не существует ';
+
+    if ((a < b + c) && (c < b + a) && (b< a + c)){
+        var p = (a + b + c) / 2;
+        s = Math.sqrt(p * (p - a) * (p - b) * (p - c))
+        document.forma1.rez.value=s;
     }
     else {
-        var p = (a * 1 + b * 1 + c * 1) / 2;
-        document.forma1.res.value = math.sqrt((p * (p - a * 1) * (p - b * 1) * (p - c * 1)));
+        document.forma1.rez.value="треугольник не существует"
     }
-
 }
