@@ -16,12 +16,6 @@ count = 0
 words = []
 
 for i in a:
-    for j in i:
-        if 'РОСАМАХА'.count(j) == i.count(j):
-            words.append(i)
-
-
-for i in words:
     flag = True
     for j in range(len(i) - 1):
         if ((i[j] + i[j + 1]) in a_vowelsv) or ((i[j] + i[j + 1]) in a_consonants):
