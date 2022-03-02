@@ -3,6 +3,7 @@ from itertools import permutations
 a = set(list(permutations('РОСАМАХА', 8)))
 a2 = set(list(permutations('ОА', 2)))
 a3 = set(list(permutations('РСМХ', 2)))
+
 a_vowelsv = []
 a_consonants = []
 
