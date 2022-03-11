@@ -17,8 +17,8 @@ for i in a:
         mn = i.count('G')
         s = i
 
-for i in s:
-    if s.count(i) > mx_amount_sign:
+for i in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+    if s.count(i) >= mx_amount_sign:
         sign = i
         mx_amount_sign = s.count(i)
 
