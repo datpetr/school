@@ -1,5 +1,5 @@
-phone_book = dict()
-data = input()
+phone_book = {}
+data = input('Input name and phone number')
 
 while data != '.':
     data = data.replace(',', '').split()
