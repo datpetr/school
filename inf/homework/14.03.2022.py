@@ -1,5 +1,5 @@
 phone_book = {}
-data = input('Input name and phone number')
+data = input('Input name and phone number: ')
 
 while data != '.':
     data = data.replace(',', '').split()
@@ -12,6 +12,6 @@ while data != '.':
     else:
         name, number = data[0], data[1:]
         phone_book[name] = phone_book.get(name, []) + number
-    data = input()
+    data = input('Input name and phone number: ')
 
 print(phone_book)
