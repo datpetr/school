@@ -6,7 +6,7 @@ while data != '.':
     if len(data) == 1:
         name = ''.join(data)
         if name in phone_book:
-            print(', '.join(phone_book[name]))
+            print('{}, {}'.format(name, phone_book[name]))
         else:
             print("NOT FOUND")
     else:
