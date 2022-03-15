@@ -14,4 +14,5 @@ while data != '.':
         phone_book[name] = phone_book.get(name, []) + number
     data = input('Input name and phone number: ')
 
-print(phone_book)
+for elem in phone_book:
+    print('{}: {}'.format(elem, phone_book[elem]))
