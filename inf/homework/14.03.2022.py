@@ -10,7 +10,7 @@ while data != '.':
         else:
             print("NOT FOUND")
     else:
-        name, number = data[0], data[1:]
+        name, number = data[0].capitalize(), data[1:]
         phone_book[name] = phone_book.get(name, []) + number
     data = input('Input name and phone number: ')
 
