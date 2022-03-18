@@ -1,7 +1,7 @@
 f = open('files/k7b-1.txt').readline()
 
 mx = 0
-count = 0
+count = 1
 count2 = 0
 a = ['E', 'A', 'B']
 
@@ -12,5 +12,5 @@ for i in range(len(f)):
     else:
         if count > mx:
             mx = count
-        count = 0
-print(mx + 1)
+        count = 1
+print(mx)
