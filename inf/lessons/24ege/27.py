@@ -12,5 +12,5 @@ for i in range(len(f)):
     else:
         if count > mx:
             mx = count
-        count = count2 = 0
-print(mx)
+        count = 0
+print(mx + 1)
