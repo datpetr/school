@@ -1,4 +1,4 @@
-f = open('files/k7b-1.txt').readline()
+f = open('files/k7b-2.txt').readline()
 
 mx = count = count2 = 0
 a = ['D', 'B', 'A', 'C']
