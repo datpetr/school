@@ -20,8 +20,11 @@ count = 0
 
 for i in range(4000000, 6000000 + 1):
     x = f(i)
-    if (len(x) != 0 and x.count('2') % 2 != 0
-            and x.count('3') % 2 == 0 and x.count('2') != 0 and x.count('3') != 0):
+    if (len(x) != 0 and
+            x.count('2') % 2 != 0
+            and x.count('3') % 2 == 0
+            and x.count('2') != 0
+            and x.count('3') != 0):
         a.append([i, x])
         count += 1
 
