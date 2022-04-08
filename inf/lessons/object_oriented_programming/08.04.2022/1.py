@@ -23,7 +23,8 @@ class Student(Man):
         self.marks.append(mark)
 
     def __repr__(self):
-        return f'Студент {self.return_name()}:\n\tВозраста: {self.return_age()}\n\tОценки: {list(self.marks)}\n'
+        return f'Студент {self.return_name()}:\n\tУниерситет {self.universty}\n\t' \
+               f'Возраст: {self.return_age()}\n\tОценки: {list(self.marks)}\n'
 
 
 class Employer(Man):
@@ -32,11 +33,15 @@ class Employer(Man):
         self.salary = salary
         self.plant = plant
 
-    def change_work(self, new_plant):
+    def change_work(self, new_plant, new_salry):
         self.plant = new_plant
+        self.salary = new_salry
 
     def __repr__(self):
-        return f'Работник {self.return_name()}:\n\tВозраста: {self.return_age()}\n\tЗавод: "{self.plant}"\n'
+        return f'Работник {self.return_name()}:\n\t' \
+               f'Возраста: {self.return_age()}\n\t' \
+               f'Завод: "{self.plant}"\n\t' \
+               f'Заработная плата: {self.salary}\n'
 
 
 student1 = Student('Mark', 3, 'Oxford', [1, 2, 5, 7, 8])
@@ -45,5 +50,5 @@ student1.add_marks(5)
 print(student1)
 worker1 = Employer('Jef', 87, 'Ugolnyu', 12312312)
 print(worker1)
-worker1.change_work('Dnipro')
+worker1.change_work('Dnipro', 189361638916)
 print(worker1)
