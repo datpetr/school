@@ -1,4 +1,4 @@
-f = list(map(int, open('files/27-A.txt', 'r').readlines()))
+f = list(map(int, open('files/27-B.txt', 'r').readlines()))
 n = f.pop(0)
 
 s1 = s2 = s = bestPos = 0
@@ -19,6 +19,7 @@ else:
     s += f[n // 2] * (n // 2)
 
 sm = s
+
 for i in range(1, n):
     s = s - s1 + s2
     s1 = s1 - f[i] + f[(n // 2 + i) % n]
