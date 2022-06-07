@@ -1,26 +1,27 @@
-def f(n):
-    num = n
-    list_simple = []
-    simple = 2
-    while num > 1 and simple < int(n ** 0.5) + 1:
-        if num % simple == 0:
-            list_simple.append(simple)
-            num /= simple
-        else:
-            simple += 1
-    return list(map(str, list_simple))
+def oddEvenDivs(n):
+    count2 = 0
+    while n % 2 == 0:
+        count2, n = count2 + 1, n // 2
+    if count2 % 2 == 0: return False, 0
+
+    d, p = 3, 1
+    while n > 1 and d * d <= n:
+        count = 0
+        while n % d == 0:
+            count, n = count + 1, n // d
+        if count % 2 == 1: return False, 0
+        p *= count + 1
+        d += 2
+
+    return n == 1, p * count2
 
 
-a = []
+k = 1
 count = 0
-for i in range(4000000, 6000000):
-    x = f(i)
-    for i in x:
-        if i not in '23':
-            break
-    else:
-        if x.count('2') % 2 != 0 and x.count('3') % 2 == 0:
-            count += 1
-            a.append([i, x])
-
-print(count, a)
+while count < 5:
+    x = 1850000000 + k
+    valid, evenDivs = oddEvenDivs(x)
+    if valid:
+        count += 1
+        print(k, evenDivs)
+    k += 1
