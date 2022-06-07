@@ -2,14 +2,16 @@ def oddEvenDivs(n):
     count2 = 0
     while n % 2 == 0:
         count2, n = count2 + 1, n // 2
-    if count2 % 2 == 0: return False, 0
+    if count2 % 2 == 0:
+        return False, 0
 
     d, p = 3, 1
     while n > 1 and d * d <= n:
         count = 0
         while n % d == 0:
             count, n = count + 1, n // d
-        if count % 2 == 1: return False, 0
+        if count % 2 == 1:
+            return False, 0
         p *= count + 1
         d += 2
 
