@@ -15,6 +15,5 @@ for i in a_z_y:
 for i in 'XYZ':
     f = f.replace(i, ' ')
 
-a = f.split()
-lengts = [len(_) for _ in a]
+lengts = [len(_) for _ in f.split()]
 print(max(lengts))
