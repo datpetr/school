@@ -1,32 +1,16 @@
-def f(n):
-    num = n
-    list_simple = []
-    while num % 2 == 0 or num % 3 == 0:
-        if num % 2 == 0:
-            list_simple.append(2)
-            num //= 2
-        if num % 3 == 0:
-            list_simple.append(3)
-            num //= 3
-
-    if num == 1:
-        return list(map(str, list_simple))
-    else:
-        return []
+def f(x, a1, a2):
+    return ((8 <= x <= 12) == (4 <= x <= 30)) <= (not (a1 <= x <= a2))
 
 
-a = []
-count = 0
+s = []
+for a1 in range(-100, 110):
+    for a2 in range(-100, 110):
+        flag = True
+        for x in range(-100, 110):
+            if not(f(x, a1, a2)):
+                flag = False
+                break
+        if flag:
+            s.append(a2 - a1)
 
-for i in range(4000000, 6000000 + 1):
-    x = f(i)
-    if (len(x) != 0 and
-            x.count('2') % 2 != 0
-            and x.count('3') % 2 == 0
-            and x.count('2') != 0
-            and x.count('3') != 0):
-        a.append([i, x])
-        count += 1
-
-print(a)
-print(count)
+print(max(s) + 1)

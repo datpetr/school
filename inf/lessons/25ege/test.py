@@ -21,7 +21,7 @@ def oddEvenDivs(n):
 k = 1
 count = 0
 while count < 5:
-    x = 1850000000 + k
+    x = 1_850_000_000 + k
     valid, evenDivs = oddEvenDivs(x)
     if valid:
         count += 1
