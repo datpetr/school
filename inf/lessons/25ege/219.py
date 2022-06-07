@@ -4,10 +4,7 @@ def isPrime(n):
 
 def allDivs(n):
     q = round(n ** 0.5)
-    divs = [] \
-        if n % q != 0 else \
-        [q] if q == n // q else \
-        [q, n // q]
+    divs = [] if n % q != 0 else [q] if q == n // q else [q, n // q]
     for d in range(1, q):
         if n % d == 0:
             divs.extend([d, n // d])
