@@ -3,6 +3,7 @@ f = open('files/26-82.txt', 'r')
 n = int(f.readline())
 a = []
 mx_row = count_even = mx_count_even = 0
+
 for _ in range(n):
     a.append(list(map(int, f.readline().split())))
 
