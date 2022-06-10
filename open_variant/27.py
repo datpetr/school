@@ -1,30 +1,17 @@
+from itertools import accumulate
+
+
 f = list(map(int, open('files/27_A.txt', 'r').readlines()))
+
 n = f.pop(0)
+a = f
+f = a + f
+pr = [0] + list(accumulate(f))
+s = sum(min(j, n - j) * f[j] * 3 for j in range(n))
+ms = s
 
-s1 = s2 = s = bestPos = 0
-
-if n % 2 == 0:
-    for i in range(1, n // 2):
-        s += f[i] * i + f[-i] * i
-        s1 += f[i]
-        s2 += f[-i]
-    s += f[n // 2] * (n // 2)
-    s1 += f[n // 2]
-    s2 += f[0]
-else:
-    for i in range(1, n // 2):
-        s += f[i] * i + f[-i] * i
-        s1 += f[i]
-        s2 += f[-i]
-    s += f[n // 2] * (n // 2)
-
-sm = s
 for i in range(1, n):
-    s = s - s1 + s2
-    s1 = s1 - f[i] + f[(n // 2 + i) % n]
-    s2 = s2 + f[i] - f[(n // 2 + i) % n]
-    if s < sm:
-        sm = s
-        bestPos = i
+    s = s - (pr[i + n // 2] - pr[i]) + (pr[i + n] - pr[i + n // 2])
+    ms = min(ms, s)
 
-print(sm, bestPos + 1)
+print(ms * 3)
