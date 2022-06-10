@@ -14,6 +14,5 @@ for i in a_z_y:
 
 for i in 'XYZ':
     f = f.replace(i, ' ')
-
 lengts = [len(_) for _ in f.split()]
 print(max(lengts))
